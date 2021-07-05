@@ -2,13 +2,13 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const fs = require('fs');
-const apiRoutes = require('./routes/apiRs');
-const htmlRoutes = require('./routes/htmlRs');
+const apiRs = require('./routes/apiRs');
+const htmlRs = require('./routes/htmlRs');
 
 // middleware //
-app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static('public'));
 app.use('/api',apiRs);
 app.use('/', htmlRs);
 
@@ -19,6 +19,5 @@ app.use('/', htmlRs);
 
 
 // Starts the server, listening
-app.listen(PORT, () => {
-    console.log(`You are now online through Port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`You are now online through Port ${PORT}`));
+
