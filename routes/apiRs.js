@@ -32,6 +32,10 @@ router.post("/notes", (req, res) => {
 }
 );
 
+// ADD DELETE OPTION HERE
+// router.delete
+
+
 //exporting allows you to use in server.js
 module.exports = router;
 
