@@ -24,7 +24,7 @@ router.get("/notes", (req, res) => {
 }
 );
 
-//Postrs, adds new
+//Post, adds new
 router.post("/notes", (req, res) => {
     req.body.id = uniqid();
     const note = createNote(req.body, notes);
@@ -32,5 +32,6 @@ router.post("/notes", (req, res) => {
 }
 );
 
+//exporting allows you to use in server.js
 module.exports = router;
 
